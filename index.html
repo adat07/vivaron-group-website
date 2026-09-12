@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vivaron Group | Hardware Distribution Across West Bengal</title>
+<meta name="description" content="Vivaron Group is a trusted hardware distributor based in Kolkata, serving hardware dealers across West Bengal since 2010 with SDS, agri hardware inputs and general hardware items.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0a2540;
+    --navy-dark:#071a2f;
+    --steel:#4d6480;
+    --steel-light:#eef2f6;
+    --accent:#c9622a;
+    --accent-dark:#a94f20;
+    --ink:#152233;
+    --muted:#5b6b7c;
+    --white:#ffffff;
+    --radius:6px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',Arial,Helvetica,sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+  h1,h2,h3{font-weight:800;line-height:1.15;letter-spacing:-0.01em;}
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--accent);
+  }
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    background:var(--navy-dark);
+    color:var(--white);
+    position:sticky;
+    top:0;
+    z-index:50;
+    border-bottom:3px solid var(--accent);
+  }
+  .topbar .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:14px;
+    padding-bottom:14px;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .brand{
+    font-size:20px;
+    font-weight:800;
+    letter-spacing:0.02em;
+  }
+  .brand span{color:var(--accent);}
+  .topbar-actions{display:flex;gap:10px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 18px;
+    border-radius:var(--radius);
+    font-weight:700;
+    font-size:14.5px;
+    white-space:nowrap;
+    border:2px solid transparent;
+    transition:transform .12s ease, background .15s ease, border-color .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-accent{background:var(--accent);color:var(--white);}
+  .btn-accent:hover{background:var(--accent-dark);}
+  .btn-outline{background:transparent;color:var(--white);border-color:rgba(255,255,255,0.35);}
+  .btn-outline:hover{border-color:var(--white);}
+  .btn-navy{background:var(--navy);color:var(--white);}
+  .btn-navy:hover{background:var(--navy-dark);}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-dark) 100%);
+    color:var(--white);
+    padding:90px 0 100px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    right:-120px;
+    top:-120px;
+    width:420px;
+    height:420px;
+    border:2px solid rgba(255,255,255,0.08);
+    border-radius:50%;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    right:40px;
+    bottom:-160px;
+    width:280px;
+    height:280px;
+    border:2px solid rgba(201,98,42,0.25);
+    border-radius:50%;
+  }
+  .hero-inner{max-width:680px;position:relative;z-index:2;}
+  .hero h1{
+    font-size:44px;
+    margin:14px 0 18px;
+  }
+  .hero p.lead{
+    font-size:18px;
+    color:#cfd9e4;
+    max-width:560px;
+    margin-bottom:34px;
+  }
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .hero-actions .btn{padding:14px 26px;font-size:15.5px;}
+
+  /* ---------- Section shell ---------- */
+  section{padding:76px 0;}
+  .section-head{max-width:640px;margin-bottom:44px;}
+  .section-head h2{font-size:32px;color:var(--navy);margin-top:10px;}
+  .section-head p{color:var(--muted);margin-top:14px;font-size:16px;}
+
+  /* ---------- About ---------- */
+  .about{background:var(--white);}
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:56px;
+    align-items:start;
+  }
+  .about-grid p{color:var(--muted);font-size:16.5px;margin-bottom:16px;}
+  .fact-card{
+    background:var(--steel-light);
+    border-left:4px solid var(--accent);
+    border-radius:var(--radius);
+    padding:26px 28px;
+  }
+  .fact-card h3{color:var(--navy);font-size:17px;margin-bottom:10px;}
+  .fact-card ul{list-style:none;color:var(--muted);font-size:15px;}
+  .fact-card li{padding:6px 0;border-bottom:1px solid #dde5ec;}
+  .fact-card li:last-child{border-bottom:none;}
+  .fact-card li b{color:var(--ink);}
+
+  /* ---------- Products ---------- */
+  .products{background:var(--steel-light);}
+  .product-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:26px;
+  }
+  .product-card{
+    background:var(--white);
+    border-radius:var(--radius);
+    padding:34px 28px;
+    border-top:4px solid var(--navy);
+    box-shadow:0 1px 3px rgba(10,37,64,0.06);
+  }
+  .product-card .num{
+    font-size:14px;
+    font-weight:800;
+    color:var(--accent);
+    letter-spacing:0.06em;
+  }
+  .product-card h3{
+    color:var(--navy);
+    font-size:20px;
+    margin:12px 0 10px;
+  }
+  .product-card p{color:var(--muted);font-size:15px;}
+
+  /* ---------- Why / stats ---------- */
+  .why{background:var(--navy);color:var(--white);}
+  .why .section-head h2{color:var(--white);}
+  .why .section-head p{color:#b9c6d4;}
+  .stat-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+    text-align:center;
+  }
+  .stat{
+    padding:30px 16px;
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:var(--radius);
+  }
+  .stat .stat-num{
+    font-size:38px;
+    font-weight:800;
+    color:var(--accent);
+    display:block;
+    margin-bottom:8px;
+  }
+  .stat .stat-label{
+    font-size:14px;
+    color:#cfd9e4;
+    font-weight:500;
+  }
+
+  /* ---------- Contact ---------- */
+  .contact{background:var(--white);}
+  .contact-panel{
+    background:var(--steel-light);
+    border-radius:8px;
+    padding:48px;
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:40px;
+    align-items:center;
+  }
+  .contact-panel h2{color:var(--navy);font-size:28px;margin-bottom:14px;}
+  .contact-panel p{color:var(--muted);font-size:16px;margin-bottom:0;}
+  .contact-actions{display:flex;flex-direction:column;gap:14px;}
+  .contact-actions .btn{justify-content:center;padding:16px 20px;font-size:16px;}
+  .contact-note{
+    font-size:13px;
+    color:var(--muted);
+    text-align:center;
+    margin-top:2px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--navy-dark);
+    color:#9fb0c0;
+    padding:30px 0;
+    text-align:center;
+    font-size:14px;
+  }
+  footer b{color:var(--white);}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:860px){
+    .about-grid{grid-template-columns:1fr;}
+    .product-grid{grid-template-columns:1fr 1fr;}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .contact-panel{grid-template-columns:1fr;padding:34px 26px;}
+    .hero h1{font-size:34px;}
+  }
+  @media (max-width:560px){
+    .topbar .wrap{flex-direction:column;align-items:flex-start;}
+    .product-grid{grid-template-columns:1fr;}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .hero{padding:64px 0 72px;}
+    .hero h1{font-size:28px;}
+    .hero p.lead{font-size:16px;}
+    section{padding:56px 0;}
+    .contact-panel{padding:28px 20px;}
+  }
+</style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">VIVARON<span>.</span> GROUP</div>
+      <div class="topbar-actions">
+        <!-- REPLACE PHONE NUMBER HERE -->
+        <a class="btn btn-outline" href="tel:+910000000000">Call Us</a>
+        <a class="btn btn-accent" href="https://wa.me/910000000000" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-inner">
+        <p class="eyebrow" style="color:#e8a679;">Hardware Distribution &middot; Established 2010</p>
+        <h1>Trusted Hardware Distribution Across West Bengal Since 2010</h1>
+        <p class="lead">Vivaron Group supplies hardware dealers across every district of West Bengal with SDS, agri hardware inputs, and general hardware items &mdash; backed by a dedicated field sales team and over a decade of reliable service.</p>
+        <div class="hero-actions">
+          <!-- REPLACE PHONE NUMBER HERE -->
+          <a class="btn btn-accent" href="tel:+910000000000">Call Now</a>
+          <a class="btn btn-outline" href="https://wa.me/910000000000" target="_blank" rel="noopener">WhatsApp Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div>
+          <p class="eyebrow">About Us</p>
+          <h2 style="color:var(--navy);font-size:30px;margin:12px 0 18px;">A Kolkata-Based Distributor Serving All of West Bengal</h2>
+          <p>Founded in 2010 and headquartered in Kolkata, Vivaron Group has grown into a dependable hardware distribution business serving hardware dealers across West Bengal.</p>
+          <p>Our team of 20 professionals, including a dedicated field sales force covering every district of the state, ensures that dealers get consistent access to quality SDS, agri hardware inputs, and general hardware items &mdash; on time, every time.</p>
+        </div>
+        <div class="fact-card">
+          <h3>Company Snapshot</h3>
+          <ul>
+            <li><b>Founded:</b> 2010</li>
+            <li><b>Headquarters:</b> Kolkata, West Bengal</li>
+            <li><b>Team Size:</b> 20 professionals</li>
+            <li><b>Field Coverage:</b> All districts of West Bengal</li>
+            <li><b>Customers:</b> Hardware dealers state-wide</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products" id="products">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What We Distribute</p>
+        <h2>Three Core Product Lines</h2>
+        <p>We supply hardware dealers across West Bengal with a focused, reliable range of products.</p>
+      </div>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="num">01</div>
+          <h3>SDS</h3>
+          <p>Quality SDS supply for hardware dealers, sourced and delivered reliably across the state.</p>
+        </div>
+        <div class="product-card">
+          <div class="num">02</div>
+          <h3>Agri Hardware Inputs</h3>
+          <p>A dependable range of agricultural hardware inputs for dealers serving farming communities across West Bengal.</p>
+        </div>
+        <div class="product-card">
+          <div class="num">03</div>
+          <h3>General Hardware Items</h3>
+          <p>A broad catalogue of everyday hardware items, stocked and distributed to dealers throughout the region.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="color:#e8a679;">Why Vivaron Group</p>
+        <h2>Built On A Decade Of Reach And Reliability</h2>
+        <p>A field-first distribution model that keeps hardware dealers stocked, state-wide.</p>
+      </div>
+      <div class="stat-grid">
+        <div class="stat">
+          <span class="stat-num">2010</span>
+          <span class="stat-label">Year Founded</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">20+</span>
+          <span class="stat-label">Team Members</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">10</span>
+          <span class="stat-label">Field Sales Reps</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Districts of West Bengal Covered</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-panel">
+        <div>
+          <p class="eyebrow">Get In Touch</p>
+          <h2>Ready To Work With Vivaron Group?</h2>
+          <p>Reach out to our team directly by phone or WhatsApp &mdash; we're here to help dealers across West Bengal.</p>
+        </div>
+        <div class="contact-actions">
+          <!-- REPLACE PHONE NUMBER HERE -->
+          <a class="btn btn-navy" href="tel:+910000000000">&#128222; Call Now: +91 00000 00000</a>
+          <a class="btn btn-accent" href="https://wa.me/910000000000" target="_blank" rel="noopener">&#128172; Message Us on WhatsApp</a>
+          <p class="contact-note">Kolkata, West Bengal, India</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p><b>Vivaron Group</b> &mdash; Hardware Distribution Across West Bengal &middot; &copy; <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
